@@ -237,7 +237,7 @@ def scrape():
             flash('Please provide a valid Amazon product URL.', 'warning')
             return render_template('products.html')
 
-# Optional: Route to view stored products
+# Route to view stored products
 @app.route('/products', methods=['GET'])
 @login_required
 def view_products():

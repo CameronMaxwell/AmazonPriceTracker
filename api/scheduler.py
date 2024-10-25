@@ -32,11 +32,12 @@ def check_prices(app):
                 price_history = PriceHistory(
                     product_id=product.id,
                     price=product_price_float,
-                    timestamp=datetime.now(est)  # Use EST timezone here
+                    timestamp=datetime.now(est)  
                 )
                 db.session.add(price_history)
         db.session.commit()
 
+# Check price of item every week
 def start_price_check_scheduler(app):
     scheduler = BackgroundScheduler()
     scheduler.add_job(func=check_prices, args=[app], trigger="interval", hours=168)

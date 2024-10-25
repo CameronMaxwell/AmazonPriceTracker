@@ -6,14 +6,16 @@ from datetime import datetime
 
 db = SQLAlchemy()
 
+# User DB info
 class User(UserMixin, db.Model):
-    __tablename__ = 'user'  # Explicit table name
+    __tablename__ = 'user'  
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
     email = db.Column(db.String(150), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)  # Hashed password
+    password = db.Column(db.String(200), nullable=False)  
     products = db.relationship('Product', backref='owner', lazy=True)
 
+# Product DB info
 class Product(db.Model):
     __tablename__ = 'product'
     id = db.Column(db.Integer, primary_key=True)
@@ -23,7 +25,7 @@ class Product(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     price_history = db.relationship('PriceHistory', backref='product', lazy=True)
-
+# Price history DB info
 class PriceHistory(db.Model):
     __tablename__ = 'price_history'
     id = db.Column(db.Integer, primary_key=True)
