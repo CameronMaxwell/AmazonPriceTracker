@@ -246,11 +246,13 @@ def view_products():
 
 if __name__ == '__main__':
     with app.app_context():
-        print("Inside app context.")
         try:
-            db.create_all()
+            db.create_all()  # Create tables if they don't exist
             print("Database tables created.")
         except Exception as e:
             print(f"Error creating tables: {e}")
-        start_price_check_scheduler(app)
-    app.run(debug=True, port=5000, use_reloader=False)
+        start_price_check_scheduler(app)  # Start the scheduler if needed
+
+    # Start the app with a dynamic port
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)  # Set debug=False for production
