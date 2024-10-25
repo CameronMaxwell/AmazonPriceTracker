@@ -1,0 +1,5 @@
+Flask
+SQLAlchemy
+requests
+beautifulsoup4
+APScheduler

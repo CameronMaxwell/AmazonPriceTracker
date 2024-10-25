@@ -1,0 +1,17 @@
+/* api/static/css/styles.css */
+
+/* Center the form and table */
+.container {
+    max-width: 800px;
+}
+
+/* Style the status message */
+#status {
+    font-weight: bold;
+}
+
+/* Add some spacing to the price history list */
+#products ul {
+    list-style-type: none;
+    padding-left: 0;
+}
