@@ -15,6 +15,7 @@ Technologies Used
 •	Python and Flask for the backend
 •	SQL Database for data persistence
 •	Web Scraping API to gather real-time price data from Amazon
+
 Getting Started
 
 1.	Clone the repository: git clone <repo-url>
