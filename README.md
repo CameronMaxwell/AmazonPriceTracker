@@ -10,6 +10,7 @@ Features
 •	Product Tracking: Add and remove products to monitor prices in real-time.
 •	Price Alerts: Users receive notifications when the price of a tracked product changes.
 •	SQL Database: Utilizes an SQL database to store user accounts and product information.
+
 Technologies Used
 
 •	Python and Flask for the backend
@@ -22,5 +23,5 @@ Getting Started
 2.	Install dependencies: pip install -r requirements.txt
 3.	Set up your database and ensure it’s configured in your .env file.
 4.	Run the app: python app.py
-Future Enhancements
+
 
